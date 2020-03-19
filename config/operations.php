@@ -66,6 +66,31 @@
 
                
             }
+  // View Feedback For Users
+        public function view_feedback()
+        {
+            global $db;
+            $query = "select * from feedback";
+            $result = mysqli_query($db->connection,$query);
+            return $result;
+        }
+        // Delete Feedback 
+         public function Delete_feedback($id)
+        {
+            global $db;
+            $query = "delete from feedback where id='$id'";
+            $result = mysqli_query($db->connection,$query);
+            if($result)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+       
+
         }
 
        
